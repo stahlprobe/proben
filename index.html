@@ -3,24 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proben-Datenbank</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Probenübersicht</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f4f4f4;
+        }
+
+        a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-    <h1>Proben-Datenbank</h1>
-    <p>Proben:</p>
-    <ul>
-        <li><a href="probenUebersicht.html">Probenübersicht</a></li>
-        <br>
-        <li><a href="testprobe.html">Testprobe</a></li>
-        <br>
-        <li><a href="probe1.html">Probe 1</a></li>
-        <li><a href="probe1.html">Probe 2</a></li>
-        <li><a href="probe1.html">Probe 3</a></li>
-        <li><a href="probe1.html">Probe 4</a></li>
-        <li><a href="probe1.html">Probe 5</a></li>
-        <li><a href="probe1.html">Probe 6</a></li>
-        <li><a href="probe1.html">Probe 7</a></li>
-    </ul>
+    <h1>Probenübersicht</h1>
+    <table id="probenTabelle">
+        <thead>
+            <tr>
+                <th>Proben_ID</th>
+                <th>Material</th>
+                <th>Schweißparameter</th>
+                <th>Datum</th>
+                <th>Anmerkung</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Dynamische Inhalte werden hier eingefügt -->
+        </tbody>
+    </table>
+
+    <script>
+        // Proben-Daten als Array von Objekten
+        const proben = [
+            {
+                id: "01",
+                material: "S690QL",
+                schweißparameter: "500°C",
+                datum: "13.01.2025",
+                anmerkung: "toppi"
+            },
+            {
+                id: "02",
+                material: "S355",
+                schweißparameter: "450°C",
+                datum: "15.01.2025",
+                anmerkung: "Test erfolgreich"
+            },
+            {
+                id: "03",
+                material: "S960QL",
+                schweißparameter: "550°C",
+                datum: "20.01.2025",
+                anmerkung: "Experiment läuft"
+            }
+        ];
+
+        // Funktion, um die Tabelle mit Proben-Daten zu befüllen
+        function probenInTabelleEinfügen() {
+            const tabelle = document.getElementById("probenTabelle").querySelector("tbody");
+
+            proben.forEach(probe => {
+                // Erstelle eine neue Zeile für die Tabelle
+                const zeile = document.createElement("tr");
+
+                // Erstelle die Zellen der Zeile mit dynamischen Links
+                zeile.innerHTML = `
+                    <td><a href="probe.html?id=${probe.id}">${probe.id}</a></td>
+                    <td>${probe.material}</td>
+                    <td>${probe.schweißparameter}</td>
+                    <td>${probe.datum}</td>
+                    <td>${probe.anmerkung}</td>
+                `;
+
+                // Füge die Zeile zur Tabelle hinzu
+                tabelle.appendChild(zeile);
+            });
+        }
+
+        // Tabelle beim Laden der Seite erstellen
+        probenInTabelleEinfügen();
+    </script>
 </body>
 </html>
