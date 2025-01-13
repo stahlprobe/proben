@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neue Probe hinzufügen</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        label {
+            font-weight: bold;
+            margin-top: 10px;
+            display: block;
+        }
+
+        input, textarea, button {
+            width: 100%;
+            margin-top: 5px;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        button {
+            margin-top: 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Neue Probe erstellen</h1>
+    <form id="probeForm">
+        <label for="material">Material:</label>
+        <input type="text" id="material" name="material" required>
+
+        <label for="datum">Datum:</label>
+        <input type="date" id="datum" name="datum" required>
+
+        <label for="schweissparameter">Schweißparameter:</label>
+        <input type="text" id="schweissparameter" name="schweissparameter" required>
+
+        <label for="anmerkung">Anmerkung:</label>
+        <textarea id="anmerkung" name="anmerkung"></textarea>
+
+        <button type="button" onclick="speichereProbe()">Speichern</button>
+    </form>
+
+    <script>
+        // Proben-ID aus der URL holen
+        function getQueryParam(param) {
+            const params = new URLSearchParams(window.location.search);
+            return params.get(param);
+        }
+
+        const neueID = getQueryParam("id");
+
+        // Funktion: Neue Probe speichern
+        function speichereProbe() {
+            const material = document.getElementById("material").value;
+            const datum = document.getElementById("datum").value;
+            const schweissparameter = document.getElementById("schweissparameter").value;
+            const anmerkung = document.getElementById("anmerkung").value;
+
+            const neueProbe = {
+                id: neueID,
+                material,
+                datum,
+                schweissparameter,
+                anmerkung
+            };
+
+            // Bestehende Proben aus LocalStorage holen
+            const proben = JSON.parse(localStorage.getItem("proben")) || [];
+            proben.push(neueProbe);
+
+            // Aktualisierte Probenliste speichern
+            localStorage.setItem("proben", JSON.stringify(proben));
+
+            // Zurück zur Übersicht
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>
