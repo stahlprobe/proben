@@ -1,0 +1,52 @@
+/* Allgemeine Einstellungen */
+body {
+    font-family: Arial, sans-serif; /* Klare und schlichte Schrift */
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa; /* Dezenter Hintergrund */
+    color: #333; /* Schlichte Textfarbe */
+    text-align: center; /* Zentrierter Text */
+}
+
+/* Kopfbereich */
+header {
+    background-color: #343a40; /* Dunkler Hintergrund für den Header */
+    color: #fff; /* Weißer Text im Header */
+    padding: 1rem 0;
+    margin-bottom: 1rem;
+}
+
+/* Hauptinhalt */
+main {
+    padding: 1rem;
+}
+
+ul {
+    list-style: none; /* Entfernt die Standard-Punkte in der Liste */
+    padding: 0;
+}
+
+li {
+    margin: 0.5rem 0; /* Abstand zwischen den Links */
+}
+
+a {
+    text-decoration: none; /* Entfernt die Unterstreichung */
+    color: #007bff; /* Dezente blaue Links */
+    font-weight: bold;
+}
+
+a:hover {
+    color: #0056b3; /* Dunkleres Blau bei Hover */
+    text-decoration: underline; /* Unterstreichung beim Hover */
+}
+
+/* Fußzeile */
+footer {
+    margin-top: 2rem;
+    padding: 0.5rem 0;
+    background-color: #343a40; /* Gleicher Hintergrund wie der Header */
+    color: #fff; /* Weißer Text */
+    font-size: 0.9rem; /* Kleinerer Text für die Fußzeile */
+}
