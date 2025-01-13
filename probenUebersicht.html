@@ -70,7 +70,7 @@
         ];
 
         // Funktion zum Einfügen der Daten in die Tabelle
-        function probenInTabelleEinfügen() {
+        function addProbe() {
             const tabelle = document.getElementById("probenTabelle").querySelector("tbody");
 
             proben.forEach(probe => {
@@ -91,7 +91,7 @@
         }
 
         // Tabelle beim Laden der Seite erstellen
-        probenInTabelleEinfügen();
+        addProbe();
     </script>
 </body>
 </html>
