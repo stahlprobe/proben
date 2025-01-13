@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proben Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .details {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        .details p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .details strong {
+            color: #555;
+        }
+
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Details der Probe</h1>
+    <div class="details" id="probenDetails"></div>
+    <a href="index.html">Zurück zur Übersicht</a>
+
+    <script>
+        // Proben-Daten (gleiche wie in index.html)
+        const proben = [
+            { id: "1", material: "S690QL", datum: "13.01.2025", schweißparameter: "500°C", anmerkung: "Gut geschweißt" },
+            { id: "2", material: "S355", datum: "15.01.2025", schweißparameter: "450°C", anmerkung: "Test erfolgreich" },
+            { id: "3", material: "S960QL", datum: "20.01.2025", schweißparameter: "550°C", anmerkung: "Experiment läuft" }
+        ];
+
+        // Funktion, um die Query-Parameter auszulesen
+        function getQueryParam(param) {
+            const params = new URLSearchParams(window.location.search);
+            return params.get(param);
+        }
+
+        // ID aus der URL holen
+        const probeId = getQueryParam("id");
+
+        // Passende Probe finden
+        const probe = proben.find(p => p.id === probeId);
+
+        // Details anzeigen oder Fehlermeldung
+        const detailsDiv = document.getElementById("probenDetails");
+
+        if (probe) {
+            detailsDiv.innerHTML = `
+                <p><strong>ID:</strong> ${probe.id}</p>
+                <p><strong>Material:</strong> ${probe.material}</p>
+                <p><strong>Datum:</strong> ${probe.datum}</p>
+                <p><strong>Schweißparameter:</strong> ${probe.schweißparameter}</p>
+                <p><strong>Anmerkung:</strong> ${probe.anmerkung}</p>
+            `;
+        } else {
+            detailsDiv.innerHTML = `<p>Die angeforderte Probe wurde nicht gefunden.</p>`;
+        }
+    </script>
+</body>
+</html>
