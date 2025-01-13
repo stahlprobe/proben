@@ -6,7 +6,7 @@ body {
     padding: 0;
     background-color: #f8f9fa; /* Dezenter Hintergrund */
     color: #333; /* Schlichte Textfarbe */
-    text-align: center; /* Zentrierter Text */
+    /*text-align: center;  Zentrierter Text */
 }
 
 /* Kopfbereich */
