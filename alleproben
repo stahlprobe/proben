@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Probe 2</title>
+</head>
+<table>
+    <tr>
+        <th>Proben_ID</th>
+        <th>Material</th>
+        <th>Schweißparameter</th>
+        <th>Datum</th>
+        <th>Anmerkung</th>
+    </tr>
+    <tr>
+        <td>01</td>
+        <td>S690QL</td>
+        <td>500°C</td>
+        <td>13.01.2025</td>
+        <td>toppi</td>
+    </tr>
+</table> 
+</html>
