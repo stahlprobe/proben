@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "versuchsname": "20mm_S3_V5_#1",
+    "entsorgungsdatum": "01.2031",
+    "grundwerkstoff": "S355G10+M",
+    "naht": "V-Naht 30° 1,5 mm Steg 1,5 mm Spalt",
+    "schweissprogramm": "Kemppi 1Mig Penetration+",
+    "zusatzwerkstoff": "G42 5 M21 3Si1",
+    "parameter": "I / V / V_s / T_A",
+    "t85Zeit": "3.5 Sekunden",
+    "untersuchungen": "XRD, Röntgen"
+  },
+  {
+    "id": 2,
+    "versuchsname": "15mm_S2_V4_#2",
+    "entsorgungsdatum": "12.2030",
+    "grundwerkstoff": "S460MLO",
+    "naht": "X-Naht 45° 2 mm Steg 2 mm Spalt",
+    "schweissprogramm": "Kemppi Manuel Übergangslichtbogen",
+    "zusatzwerkstoff": "G42 6 M21 4Si2",
+    "parameter": "I / V / V_s / T_B",
+    "t85Zeit": "4.2 Sekunden",
+    "untersuchungen": "Röntgen"
+  }
+]
