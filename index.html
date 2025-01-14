@@ -1,90 +1,80 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proben Übersicht</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proben Übersicht</title>
+  <style>
+    body { font-family: Arial, sans-serif; }
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+    th, td { border: 1px solid #000; padding: 8px; text-align: left; }
+    th { background-color: #f2f2f2; }
+    a { text-decoration: none; color: blue; }
+    a:hover { text-decoration: underline; }
+  </style>
+  <script>
+    // Globale Variablen für die Proben
+    const proben = [
+      {
+        id: 1,
+        versuchsname: "20mm_S3_V5_#1",
+        entsorgungsdatum: "01.2031",
+        grundwerkstoff: "S355G10+M",
+        naht: "V-Naht 30° 1,5 mm Steg 1,5 mm Spalt",
+        schweissprogramm: "Kemppi 1Mig Penetration+",
+        zusatzwerkstoff: "G42 5 M21 3Si1",
+        parameter: "I / V / V_s / T_A",
+        t85Zeit: "3.5 Sekunden",
+        untersuchungen: "XRD, Röntgen"
+      },
+      {
+        id: 2,
+        versuchsname: "15mm_S2_V4_#2",
+        entsorgungsdatum: "12.2030",
+        grundwerkstoff: "S460MLO",
+        naht: "X-Naht 45° 2 mm Steg 2 mm Spalt",
+        schweissprogramm: "Kemppi Manuel Übergangslichtbogen",
+        zusatzwerkstoff: "G42 6 M21 4Si2",
+        parameter: "I / V / V_s / T_B",
+        t85Zeit: "4.2 Sekunden",
+        untersuchungen: "Röntgen"
+      }
+    ];
 
-        h1 {
-            text-align: center;
-            color: #333;
-        }
+    // Funktion, um die Tabelle dynamisch zu generieren
+    function ladeProben() {
+      const tbody = document.getElementById("proben-tabelle");
+      proben.forEach(probe => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td>${probe.id}</td>
+          <td>${probe.versuchsname}</td>
+          <td>${probe.entsorgungsdatum}</td>
+          <td>${probe.grundwerkstoff}</td>
+          <td><a href="details.html?id=${probe.id}">Details</a></td>
+        `;
+        tbody.appendChild(row);
+      });
+    }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-        }
-
-        th, td {
-            border: 1px solid #ccc;
-            padding: 10px;
-            text-align: left;
-        }
-
-        th {
-            background-color: #f4f4f4;
-        }
-
-        a {
-            color: #007BFF;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    window.onload = ladeProben;
+  </script>
 </head>
 <body>
-    <h1>Proben Übersicht</h1>
-    <table id="probenTabelle">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Material</th>
-                <th>Datum</th>
-                <th>Details</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Dynamische Inhalte werden hier eingefügt -->
-        </tbody>
-    </table>
-
-    <script>
-        // Proben-Daten als Array von Objekten
-        const proben = [
-            { id: "1", material: "S690QL", datum: "13.01.2025" },
-            { id: "2", material: "S355", datum: "15.01.2025" },
-            { id: "3", material: "S960QL", datum: "20.01.2025" }
-        ];
-
-        // Funktion, um die Tabelle zu füllen
-        function ladeProbenTabelle() {
-            const tbody = document.getElementById("probenTabelle").querySelector("tbody");
-
-            proben.forEach(probe => {
-                const zeile = document.createElement("tr");
-
-                zeile.innerHTML = `
-                    <td>${probe.id}</td>
-                    <td>${probe.material}</td>
-                    <td>${probe.datum}</td>
-                    <td><a href="details.html?id=${probe.id}">Anzeigen</a></td>
-                `;
-
-                tbody.appendChild(zeile);
-            });
-        }
-
-        // Tabelle beim Laden der Seite befüllen
-        ladeProbenTabelle();
-    </script>
+  <h1>Proben Übersicht</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Versuchsname</th>
+        <th>Datum der Entsorgung</th>
+        <th>Stahl Grundwerkstoff</th>
+        <th>Details</th>
+      </tr>
+    </thead>
+    <tbody id="proben-tabelle">
+      <!-- Dynamisch generiert -->
+    </tbody>
+  </table>
 </body>
 </html>
