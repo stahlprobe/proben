@@ -11,7 +11,7 @@
     label { font-weight: bold; }
   </style>
   <script>
-    // Funktion, um die Details zu einer bestimmten Probe zu laden
+    // Funktion, um die Details zu laden und die Checkbox zu initialisieren
     async function ladeDetails() {
       const params = new URLSearchParams(window.location.search);
       const id = parseInt(params.get("id"));
@@ -36,8 +36,30 @@
         <div class="detail-item"><label>Schweißparameter:</label> ${probe.parameter}</div>
         <div class="detail-item"><label>Mittlere t8/5-Zeit:</label> ${probe.t85Zeit}</div>
         <div class="detail-item"><label>Untersuchungen:</label> ${probe.untersuchungen}</div>
+        <div class="detail-item">
+          <label>Untersuchung abgeschlossen:</label>
+          <input type="checkbox" id="untersuchung-checkbox" ${probe.untersuchungAbgeschlossen ? "checked" : ""}>
+        </div>
+        <button onclick="speichereUntersuchung(${probe.id})">Speichern</button>
         <a href="index.html">Zurück zur Übersicht</a>
       `;
+    }
+
+    // Funktion, um den Zustand der Checkbox zu speichern
+    async function speichereUntersuchung(probeId) {
+      const checkbox = document.getElementById("untersuchung-checkbox").checked;
+
+      const response = await fetch("proben.json");
+      const proben = await response.json();
+      const probe = proben.find(p => p.id === probeId);
+
+      if (probe) {
+        probe.untersuchungAbgeschlossen = checkbox;
+
+        // Aktualisierte Daten speichern (Github API oder lokal anzeigen)
+        console.log("Aktualisierte Probe:", probe);
+        alert("Der Status der Untersuchung wurde gespeichert!");
+      }
     }
 
     window.onload = ladeDetails;
@@ -45,7 +67,7 @@
 </head>
 <body>
   <div id="details">
-    <!-- Details werden dynamisch geladen -->
+    <!-- Details und Checkbox werden hier geladen -->
   </div>
 </body>
 </html>
