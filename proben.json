@@ -24,5 +24,18 @@
     "t85Zeit": "4.2 Sekunden",
     "untersuchungen": "Röntgen",
     "untersuchungAbgeschlossen": true
+  },
+  {
+    "id": 3,
+    "versuchsname": "30mm_S4_V7_#3",
+    "entsorgungsdatum": "06.2032",
+    "grundwerkstoff": "S690QL",
+    "naht": "V-Naht 40° 2 mm Steg 1 mm Spalt",
+    "schweissprogramm": "Fronius TPS Advanced",
+    "zusatzwerkstoff": "ER70S-6",
+    "parameter": "I / V / V_s / T_C",
+    "t85Zeit": "5.0 Sekunden",
+    "untersuchungen": "XRD, Ultraschall",
+    "untersuchungAbgeschlossen": false
   }
 ]
