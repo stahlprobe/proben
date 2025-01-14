@@ -18,7 +18,7 @@
     // Funktion zum Abrufen der Datei-Informationen (inkl. SHA)
     async function holeDateiInformationen() {
       const url = "https://api.github.com/repos/stahlprobe/proben/contents/proben.json";
-      const token = "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";
+      const token = "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";
 
       try {
         const response = await fetch(url, {
@@ -62,7 +62,7 @@
     // Funktion zum Hochladen der geänderten Datei auf GitHub
     async function speichereDateiAufGithub(geänderteDaten) {
       const url = "https://api.github.com/repos/stahlprobe/proben/contents/proben.json";
-      const token = "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";
+      const token = "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";
 
       try {
         // Abrufen der Datei, um die SHA zu erhalten
