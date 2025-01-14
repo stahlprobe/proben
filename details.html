@@ -9,6 +9,10 @@
     h1 { color: #333; }
     .detail-item { margin-bottom: 10px; }
     label { font-weight: bold; }
+    button { padding: 10px 15px; background-color: blue; color: white; border: none; cursor: pointer; }
+    button:hover { background-color: darkblue; }
+    .success { color: green; }
+    .error { color: red; }
   </style>
   <script>
     // Funktion zum Abrufen der Datei-Informationen (inkl. SHA)
@@ -16,47 +20,58 @@
       const url = "https://api.github.com/repos/stahlprobe/proben/contents/proben.json";
       const token = "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";
 
-      const response = await fetch(url, {
-        method: "GET",
-        headers: {
-          "Authorization": `token ${token}`
+      try {
+        const response = await fetch(url, {
+          method: "GET",
+          headers: {
+            "Authorization": `token ${token}`
+          }
+        });
+
+        if (!response.ok) {
+          throw new Error(`Fehler beim Abrufen der Datei: ${response.statusText}`);
         }
-      });
 
-      if (!response.ok) {
-        throw new Error("Fehler beim Abrufen der Datei-Informationen");
+        return await response.json();
+      } catch (error) {
+        console.error("Fehler beim Abrufen der Datei-Informationen:", error);
+        throw error;
       }
-
-      return await response.json();
     }
 
     // Funktion zum Hochladen der geänderten Datei auf GitHub
     async function speichereDateiAufGithub(geänderteDaten) {
       const url = "https://api.github.com/repos/stahlprobe/proben/contents/proben.json";
-      const token = "<your-github-token>";
+      const token = "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";
 
-      // Abrufen der Datei, um die SHA zu erhalten
-      const dateiInfo = await holeDateiInformationen();
+      try {
+        // Abrufen der Datei, um die SHA zu erhalten
+        const dateiInfo = await holeDateiInformationen();
 
-      const daten = {
-        message: "Update proben.json",
-        content: btoa(JSON.stringify(geänderteDaten, null, 2)), // Datei-Inhalt Base64-codiert
-        sha: dateiInfo.sha // SHA der aktuellen Datei
-      };
+        const daten = {
+          message: "Update proben.json",
+          content: btoa(JSON.stringify(geänderteDaten, null, 2)), // Datei-Inhalt Base64-codiert
+          sha: dateiInfo.sha // SHA der aktuellen Datei
+        };
 
-      const response = await fetch(url, {
-        method: "PUT",
-        headers: {
-          "Authorization": `token ${token}`,
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(daten)
-      });
+        const response = await fetch(url, {
+          method: "PUT",
+          headers: {
+            "Authorization": `token ${token}`,
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(daten)
+        });
 
-      if (response.ok) {
-        alert("Änderungen gespeichert!");
-      } else {
-        console.error("Fehler beim Speichern:", await response.text());
+        if (!response.ok) {
+          throw new Error(`Fehler beim Speichern der Datei: ${response.statusText}`);
+        }
+
+        alert("Änderungen wurden erfolgreich gespeichert!");
+        console.log("Datei erfolgreich aktualisiert:", await response.json());
+      } catch (error) {
+        console.error("Fehler beim Speichern der Datei:", error);
+        alert("Fehler beim Speichern der Änderungen. Details siehe Konsole.");
       }
     }
 
@@ -64,51 +79,69 @@
     async function ladeDetails() {
       const params = new URLSearchParams(window.location.search);
       const id = parseInt(params.get("id"));
-      
-      const response = await fetch("proben.json");
-      const proben = await response.json();
-      const probe = proben.find(p => p.id === id);
 
-      if (!probe) {
-        document.body.innerHTML = "<h1>Probe nicht gefunden!</h1>";
-        return;
+      try {
+        const response = await fetch("proben.json");
+        if (!response.ok) {
+          throw new Error(`Fehler beim Laden der Proben: ${response.statusText}`);
+        }
+
+        const proben = await response.json();
+        const probe = proben.find(p => p.id === id);
+
+        if (!probe) {
+          document.body.innerHTML = "<h1>Probe nicht gefunden!</h1>";
+          return;
+        }
+
+        document.getElementById("details").innerHTML = `
+          <h1>Details zu Probe ${probe.id}</h1>
+          <div class="detail-item"><label>Versuchsname:</label> ${probe.versuchsname}</div>
+          <div class="detail-item"><label>Datum der Entsorgung:</label> ${probe.entsorgungsdatum}</div>
+          <div class="detail-item"><label>Stahl Grundwerkstoff:</label> ${probe.grundwerkstoff}</div>
+          <div class="detail-item"><label>Naht:</label> ${probe.naht}</div>
+          <div class="detail-item"><label>Schweißprogramm:</label> ${probe.schweissprogramm}</div>
+          <div class="detail-item"><label>Schweißzusatzwerkstoff:</label> ${probe.zusatzwerkstoff}</div>
+          <div class="detail-item"><label>Schweißparameter:</label> ${probe.parameter}</div>
+          <div class="detail-item"><label>Mittlere t8/5-Zeit:</label> ${probe.t85Zeit}</div>
+          <div class="detail-item"><label>Untersuchungen:</label> ${probe.untersuchungen}</div>
+          <div class="detail-item">
+            <label>Untersuchung abgeschlossen:</label>
+            <input type="checkbox" id="untersuchung-checkbox" ${probe.untersuchungAbgeschlossen ? "checked" : ""}>
+          </div>
+          <button onclick="speichereUntersuchung(${probe.id})">Speichern</button>
+          <a href="index.html">Zurück zur Übersicht</a>
+        `;
+      } catch (error) {
+        console.error("Fehler beim Laden der Details:", error);
+        document.body.innerHTML = "<h1>Fehler beim Laden der Details</h1>";
       }
-
-      document.getElementById("details").innerHTML = `
-        <h1>Details zu Probe ${probe.id}</h1>
-        <div class="detail-item"><label>Versuchsname:</label> ${probe.versuchsname}</div>
-        <div class="detail-item"><label>Datum der Entsorgung:</label> ${probe.entsorgungsdatum}</div>
-        <div class="detail-item"><label>Stahl Grundwerkstoff:</label> ${probe.grundwerkstoff}</div>
-        <div class="detail-item"><label>Naht:</label> ${probe.naht}</div>
-        <div class="detail-item"><label>Schweißprogramm:</label> ${probe.schweissprogramm}</div>
-        <div class="detail-item"><label>Schweißzusatzwerkstoff:</label> ${probe.zusatzwerkstoff}</div>
-        <div class="detail-item"><label>Schweißparameter:</label> ${probe.parameter}</div>
-        <div class="detail-item"><label>Mittlere t8/5-Zeit:</label> ${probe.t85Zeit}</div>
-        <div class="detail-item"><label>Untersuchungen:</label> ${probe.untersuchungen}</div>
-        <div class="detail-item">
-          <label>Untersuchung abgeschlossen:</label>
-          <input type="checkbox" id="untersuchung-checkbox" ${probe.untersuchungAbgeschlossen ? "checked" : ""}>
-        </div>
-        <button onclick="speichereUntersuchung(${probe.id})">Speichern</button>
-        <a href="index.html">Zurück zur Übersicht</a>
-      `;
     }
 
-    // Funktion, um den Zustand der Checkbox zu speichern
+    // Funktion zum Speichern des geänderten Untersuchungsstatus
     async function speichereUntersuchung(probeId) {
       const checkbox = document.getElementById("untersuchung-checkbox").checked;
 
-      // Aktuelle Proben aus JSON-Datei laden
-      const response = await fetch("proben.json");
-      const proben = await response.json();
+      try {
+        // Aktuelle Proben aus JSON-Datei laden
+        const response = await fetch("proben.json");
+        if (!response.ok) {
+          throw new Error(`Fehler beim Laden der Proben: ${response.statusText}`);
+        }
 
-      // Suche die betroffene Probe und ändere den Status
-      const probe = proben.find(p => p.id === probeId);
-      if (probe) {
-        probe.untersuchungAbgeschlossen = checkbox;
-        await speichereDateiAufGithub(proben); // Änderungen hochladen
-      } else {
-        alert("Fehler: Probe nicht gefunden!");
+        const proben = await response.json();
+
+        // Suche die betroffene Probe und ändere den Status
+        const probe = proben.find(p => p.id === probeId);
+        if (probe) {
+          probe.untersuchungAbgeschlossen = checkbox;
+          await speichereDateiAufGithub(proben); // Änderungen hochladen
+        } else {
+          alert("Fehler: Probe nicht gefunden!");
+        }
+      } catch (error) {
+        console.error("Fehler beim Speichern des Status:", error);
+        alert("Fehler beim Speichern des Status. Details siehe Konsole.");
       }
     }
 
