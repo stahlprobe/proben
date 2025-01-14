@@ -1,90 +1,76 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proben Details</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Probe Details</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.6; }
+    h1 { color: #333; }
+    .detail-item { margin-bottom: 10px; }
+    label { font-weight: bold; }
+  </style>
+  <script>
+    // Gleiche globale Variablen wie in index.html
+    const proben = [
+      {
+        id: 1,
+        versuchsname: "20mm_S3_V5_#1",
+        entsorgungsdatum: "01.2031",
+        grundwerkstoff: "S355G10+M",
+        naht: "V-Naht 30° 1,5 mm Steg 1,5 mm Spalt",
+        schweissprogramm: "Kemppi 1Mig Penetration+",
+        zusatzwerkstoff: "G42 5 M21 3Si1",
+        parameter: "I / V / V_s / T_A",
+        t85Zeit: "3.5 Sekunden",
+        untersuchungen: "XRD, Röntgen"
+      },
+      {
+        id: 2,
+        versuchsname: "15mm_S2_V4_#2",
+        entsorgungsdatum: "12.2030",
+        grundwerkstoff: "S460MLO",
+        naht: "X-Naht 45° 2 mm Steg 2 mm Spalt",
+        schweissprogramm: "Kemppi Manuel Übergangslichtbogen",
+        zusatzwerkstoff: "G42 6 M21 4Si2",
+        parameter: "I / V / V_s / T_B",
+        t85Zeit: "4.2 Sekunden",
+        untersuchungen: "Röntgen"
+      }
+    ];
 
-        h1 {
-            text-align: center;
-            color: #333;
-        }
+    // Funktion, um die Details zu laden
+    function ladeDetails() {
+      const params = new URLSearchParams(window.location.search);
+      const id = parseInt(params.get("id"));
+      const probe = proben.find(p => p.id === id);
 
-        .details {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            background-color: #f9f9f9;
-        }
+      if (!probe) {
+        document.body.innerHTML = "<h1>Probe nicht gefunden!</h1>";
+        return;
+      }
 
-        .details p {
-            font-size: 18px;
-            margin: 10px 0;
-        }
+      document.getElementById("details").innerHTML = `
+        <h1>Details zu Probe ${probe.id}</h1>
+        <div class="detail-item"><label>Versuchsname:</label> ${probe.versuchsname}</div>
+        <div class="detail-item"><label>Datum der Entsorgung:</label> ${probe.entsorgungsdatum}</div>
+        <div class="detail-item"><label>Stahl Grundwerkstoff:</label> ${probe.grundwerkstoff}</div>
+        <div class="detail-item"><label>Naht:</label> ${probe.naht}</div>
+        <div class="detail-item"><label>Schweißprogramm:</label> ${probe.schweissprogramm}</div>
+        <div class="detail-item"><label>Schweißzusatzwerkstoff:</label> ${probe.zusatzwerkstoff}</div>
+        <div class="detail-item"><label>Schweißparameter:</label> ${probe.parameter}</div>
+        <div class="detail-item"><label>Mittlere t8/5-Zeit:</label> ${probe.t85Zeit}</div>
+        <div class="detail-item"><label>Untersuchungen:</label> ${probe.untersuchungen}</div>
+        <a href="index.html">Zurück zur Übersicht</a>
+      `;
+    }
 
-        .details strong {
-            color: #555;
-        }
-
-        a {
-            display: block;
-            text-align: center;
-            margin-top: 20px;
-            color: #007BFF;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    window.onload = ladeDetails;
+  </script>
 </head>
 <body>
-    <h1>Details der Probe</h1>
-    <div class="details" id="probenDetails"></div>
-    <a href="index.html">Zurück zur Übersicht</a>
-
-    <script>
-        // Proben-Daten (gleiche wie in index.html)
-        const proben = [
-            { id: "1", material: "S690QL", datum: "13.01.2025", schweißparameter: "500°C", anmerkung: "Gut geschweißt" },
-            { id: "2", material: "S355", datum: "15.01.2025", schweißparameter: "450°C", anmerkung: "Test erfolgreich" },
-            { id: "3", material: "S960QL", datum: "20.01.2025", schweißparameter: "550°C", anmerkung: "Experiment läuft" }
-        ];
-
-        // Funktion, um die Query-Parameter auszulesen
-        function getQueryParam(param) {
-            const params = new URLSearchParams(window.location.search);
-            return params.get(param);
-        }
-
-        // ID aus der URL holen
-        const probeId = getQueryParam("id");
-
-        // Passende Probe finden
-        const probe = proben.find(p => p.id === probeId);
-
-        // Details anzeigen oder Fehlermeldung
-        const detailsDiv = document.getElementById("probenDetails");
-
-        if (probe) {
-            detailsDiv.innerHTML = `
-                <p><strong>ID:</strong> ${probe.id}</p>
-                <p><strong>Material:</strong> ${probe.material}</p>
-                <p><strong>Datum:</strong> ${probe.datum}</p>
-                <p><strong>Schweißparameter:</strong> ${probe.schweißparameter}</p>
-                <p><strong>Anmerkung:</strong> ${probe.anmerkung}</p>
-            `;
-        } else {
-            detailsDiv.innerHTML = `<p>Die angeforderte Probe wurde nicht gefunden.</p>`;
-        }
-    </script>
+  <div id="details">
+    <!-- Details werden dynamisch geladen -->
+  </div>
 </body>
 </html>
