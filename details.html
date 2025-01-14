@@ -11,6 +11,55 @@
     label { font-weight: bold; }
   </style>
   <script>
+    // Funktion zum Abrufen der Datei-Informationen (inkl. SHA)
+    async function holeDateiInformationen() {
+      const url = "https://api.github.com/repos/<username>/<repo>/contents/proben.json";
+      const token = "<your-github-token>";
+
+      const response = await fetch(url, {
+        method: "GET",
+        headers: {
+          "Authorization": `token ${token}`
+        }
+      });
+
+      if (!response.ok) {
+        throw new Error("Fehler beim Abrufen der Datei-Informationen");
+      }
+
+      return await response.json();
+    }
+
+    // Funktion zum Hochladen der geänderten Datei auf GitHub
+    async function speichereDateiAufGithub(geänderteDaten) {
+      const url = "https://api.github.com/repos/<username>/<repo>/contents/proben.json";
+      const token = "<your-github-token>";
+
+      // Abrufen der Datei, um die SHA zu erhalten
+      const dateiInfo = await holeDateiInformationen();
+
+      const daten = {
+        message: "Update proben.json",
+        content: btoa(JSON.stringify(geänderteDaten, null, 2)), // Datei-Inhalt Base64-codiert
+        sha: dateiInfo.sha // SHA der aktuellen Datei
+      };
+
+      const response = await fetch(url, {
+        method: "PUT",
+        headers: {
+          "Authorization": `token ${token}`,
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(daten)
+      });
+
+      if (response.ok) {
+        alert("Änderungen gespeichert!");
+      } else {
+        console.error("Fehler beim Speichern:", await response.text());
+      }
+    }
+
     // Funktion, um die Details zu laden und die Checkbox zu initialisieren
     async function ladeDetails() {
       const params = new URLSearchParams(window.location.search);
@@ -49,16 +98,17 @@
     async function speichereUntersuchung(probeId) {
       const checkbox = document.getElementById("untersuchung-checkbox").checked;
 
+      // Aktuelle Proben aus JSON-Datei laden
       const response = await fetch("proben.json");
       const proben = await response.json();
-      const probe = proben.find(p => p.id === probeId);
 
+      // Suche die betroffene Probe und ändere den Status
+      const probe = proben.find(p => p.id === probeId);
       if (probe) {
         probe.untersuchungAbgeschlossen = checkbox;
-
-        // Aktualisierte Daten speichern (Github API oder lokal anzeigen)
-        console.log("Aktualisierte Probe:", probe);
-        alert("Der Status der Untersuchung wurde gespeichert!");
+        await speichereDateiAufGithub(proben); // Änderungen hochladen
+      } else {
+        alert("Fehler: Probe nicht gefunden!");
       }
     }
 
