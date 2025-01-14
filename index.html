@@ -22,7 +22,7 @@
       proben.forEach(probe => {
         const row = document.createElement("tr");
         row.innerHTML = `
-          <td>${probe.versuchsname}</td>
+          <td><a href="details.html?id=${probe.id}">${probe.versuchsname}</a></td>
           <td>${probe.entsorgungsdatum}</td>
           <td>${probe.grundwerkstoff}</td>
           <td><a href="details.html?id=${probe.id}">Details</a></td>
