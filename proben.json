@@ -8,15 +8,15 @@
     "schweissprogramm": "Kemppi X5P FastMig, 1Mig Penetration+",
     "zusatzwerkstoff": "Böhler-Wekding G42 5 M21 3Si1",
     "parameter": "I:330 / U:29,8 / Vd:11,3 / Vs:270 / Ta:140",
-    "t85Zeit": "22,5;20,2",
+    "t85Zeit": "#1: 22,5; #2: 20,2",
     "untersuchungen": "Geplant",
-    "entsorgungsdatum": "01.2031",
+    "entsorgungsdatum": "2031-01",
     "untersuchungAbgeschlossen": false
   },
   {
     "id": 2,
     "versuchsname": "20mm_S3_V2_#1",
-    "entsorgungsdatum": "12.2030",
+    "entsorgungsdatum": "2030-12",
     "grundwerkstoff": "S355G10+M",
     "materialstärke": "20mm",
     "naht": "30° V-Naht, 1 mm Fase",
@@ -30,7 +30,7 @@
   {
     "id": 3,
     "versuchsname": "20mm_S3_V3_#1",
-    "entsorgungsdatum": "06.2032",
+    "entsorgungsdatum": "2032-06",
     "grundwerkstoff": "S690QL",
     "naht": "30° V-Naht, 1 mm Fase",
     "schweissprogramm": "Kemppi X5P FastMig",
@@ -43,7 +43,7 @@
   {
     "id": 4,
     "versuchsname": "20mm_S3_V4_#1",
-    "entsorgungsdatum": "12.2030",
+    "entsorgungsdatum": "2030-12",
     "grundwerkstoff": "S355G10+M",
     "materialstärke": "20mm",
     "naht": "30° V-Naht, 1 mm Fase",
@@ -57,7 +57,7 @@
   {
     "id": 5,
     "versuchsname": "20mm_S3_V5_#1",
-    "entsorgungsdatum": "12.2030",
+    "entsorgungsdatum": "2030-12",
     "grundwerkstoff": "S355G10+M",
     "materialstärke": "20mm",
     "naht": "30° V-Naht, 1 mm Fase",
