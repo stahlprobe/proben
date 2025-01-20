@@ -2,14 +2,14 @@
   {
     "id": 1,
     "versuchsname": "20mm_S3_V1_#1",
-    "entsorgungsdatum": "01.2031",
     "grundwerkstoff": "S355G10+M",
     "naht": "Stumpfnaht, 30°-V-Naht, 1mm Spalt",
     "schweissprogramm": "Kemppi X5P FastMig, 1Mig Penetration+",
-    "zusatzwerkstoff": "G42 5 M21 3Si1",
+    "zusatzwerkstoff": "Böhler-Wekding G42 5 M21 3Si1",
     "parameter": "I:330 / U:29,8 / Vd:11,3 / Vs:270 / Ta:140",
     "t85Zeit": "22,5;20,2",
-    "untersuchungen": "XRD, Röntgen",
+    "untersuchungen": "Ausstehend",
+    "entsorgungsdatum": "01.2031",
     "untersuchungAbgeschlossen": false
   },
   {
