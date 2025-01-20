@@ -18,7 +18,7 @@
     // Funktion zum Abrufen der Datei-Informationen (inkl. SHA)
     async function holeDateiInformationen() {
       const url = "https://api.github.com/repos/stahlprobe/proben/contents/proben.json";
-      const token = "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";
+      //const token = "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";
 
       try {
         const response = await fetch(url, {
@@ -126,10 +126,6 @@
           <div class="detail-item"><label>Mittlere t8/5-Zeit:</label> ${probe.t85Zeit}</div>
           <div class="detail-item"><label>Untersuchungen:</label> ${probe.untersuchungen}</div>
           <div class="detail-item">
-            <label>Untersuchung abgeschlossen:</label>
-            <input type="checkbox" id="untersuchung-checkbox" ${probe.untersuchungAbgeschlossen ? "checked" : ""}>
-          </div>
-          <button onclick="speichereUntersuchung(${probe.id})">Speichern</button>
           <a href="index.html">Zurück zur Übersicht</a>
         `;
       } catch (error) {
@@ -139,31 +135,6 @@
     }
 
     // Funktion zum Speichern des geänderten Untersuchungsstatus
-    async function speichereUntersuchung(probeId) {
-      const checkbox = document.getElementById("untersuchung-checkbox").checked;
-
-      try {
-        // Aktuelle Proben aus JSON-Datei laden
-        const response = await fetch("proben.json");
-        if (!response.ok) {
-          throw new Error(`Fehler beim Laden der Proben: ${response.statusText}`);
-        }
-
-        const proben = await response.json();
-
-        // Suche die betroffene Probe und ändere den Status
-        const probe = proben.find(p => p.id === probeId);
-        if (probe) {
-          probe.untersuchungAbgeschlossen = checkbox;
-          await speichereDateiAufGithub(proben); // Änderungen hochladen
-        } else {
-          alert("Fehler: Probe nicht gefunden!");
-        }
-      } catch (error) {
-        console.error("Fehler beim Speichern des Status:", error);
-        alert("Fehler beim Speichern des Status. Details siehe Konsole.");
-      }
-    }
 
     window.onload = ladeDetails;
   </script>
