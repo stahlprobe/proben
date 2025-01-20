@@ -54,4 +54,18 @@
     "untersuchungen": "Geplant",
     "untersuchungAbgeschlossen": true
   },
+  {
+    "id": 5,
+    "versuchsname": "20mm_S3_V5_#1",
+    "entsorgungsdatum": "12.2030",
+    "grundwerkstoff": "S355G10+M",
+    "materialstärke": "20mm",
+    "naht": "30° V-Naht, 1 mm Fase",
+    "schweissprogramm": "Kemppi X5P FastMig",
+    "zusatzwerkstoff": "G42 5 M21 3Si1",
+    "parameter": "I:330 / U:29,8 / Vd:11,3 / Vs:234 / Ta:100",
+    "t85Zeit": "#1: 25,4s ; #2: 21,33s",
+    "untersuchungen": "Geplant",
+    "untersuchungAbgeschlossen": true
+  }
 ]
