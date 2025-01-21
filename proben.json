@@ -2,6 +2,7 @@
   {
     "id": 1,
     "versuchsname": "20mm_S3_V1_#1",
+    "datum": "tba",
     "grundwerkstoff": "S355G10+M",
     "materialstärke": "20mm",
     "naht": "Stumpfnaht, 30°-V-Naht, 1mm Spalt",
@@ -16,6 +17,7 @@
   {
     "id": 2,
     "versuchsname": "20mm_S3_V2_#1",
+    "datum": "tba",
     "entsorgungsdatum": "2030-12",
     "grundwerkstoff": "S355G10+M",
     "materialstärke": "20mm",
@@ -30,6 +32,7 @@
   {
     "id": 3,
     "versuchsname": "20mm_S3_V3_#1",
+    "datum": "tba",
     "entsorgungsdatum": "2032-06",
     "grundwerkstoff": "S690QL",
     "naht": "30° V-Naht, 1 mm Fase",
@@ -43,6 +46,7 @@
   {
     "id": 4,
     "versuchsname": "20mm_S3_V4_#1",
+    "datum": "tba",
     "entsorgungsdatum": "2030-12",
     "grundwerkstoff": "S355G10+M",
     "materialstärke": "20mm",
@@ -57,6 +61,7 @@
   {
     "id": 5,
     "versuchsname": "20mm_S3_V5_#1",
+    "datum": "tba",
     "entsorgungsdatum": "2030-12",
     "grundwerkstoff": "S355G10+M",
     "materialstärke": "20mm",
@@ -65,6 +70,21 @@
     "zusatzwerkstoff": "G42 5 M21 3Si1",
     "parameter": "I:330 / U:29,8 / Vd:11,3 / Vs:234 / Ta:100",
     "t85Zeit": "#1: 25,4s ; #2: 21,33s",
+    "untersuchungen": "Geplant",
+    "untersuchungAbgeschlossen": true
+  },
+  {
+    "id": 6,
+    "versuchsname": "20mm_S3_V5_#2",
+    "datum": "24.10.2024 / 10:30",
+    "entsorgungsdatum": "2030-12",
+    "grundwerkstoff": "S355G10+M",
+    "materialstärke": "20mm",
+    "naht": "30° V-Naht, 1 mm Fase",
+    "schweissprogramm": "Kemppi X5P FastMig",
+    "zusatzwerkstoff": "G42 5 M21 3Si1",
+    "parameter": "I:330 / U:29,8 / Vd:11,3 / Vs:234 / Ta:100",
+    "t85Zeit": "#1: 17,34s ; #2: K:20,14s; P:16,48s",
     "untersuchungen": "Geplant",
     "untersuchungAbgeschlossen": true
   }
