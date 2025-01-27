@@ -9,7 +9,10 @@
     "schweissprogramm": "Kemppi X5P FastMig, 1Mig Penetration+",
     "zusatzwerkstoff": "Böhler-Wekding G42 5 M21 3Si1",
     "parameter": "I:330 / U:29,8 / Vd:11,3 / Vs:270 / Ta:140",
-    "t85Zeit": "#1: 22,5; #2: 20,2",
+    "t85Zeit": [
+      { "typK": "/", "pyrometer": "22,6s" },
+      { "typK": "21s", "pyrometer": "20,2s" }
+    ],
     "untersuchungen": "Geplant",
     "entsorgungsdatum": "2031-01",
     "untersuchungAbgeschlossen": false
@@ -25,7 +28,10 @@
     "schweissprogramm": "Kemppi X5P FastMig",
     "zusatzwerkstoff": "G42 5 M21 3Si1",
     "parameter": "I:330 / U:29,8 / Vd:11,3 / Vs:222 / Ta:140",
-    "t85Zeit": "30,5s ; 24s",
+    "t85Zeit": [
+      { "typK": "30,5s", "pyrometer": "/" },
+      { "typK": "/", "pyrometer": "24s" }
+    ],
     "untersuchungen": "Geplant",
     "untersuchungAbgeschlossen": true
   },
@@ -39,7 +45,10 @@
     "schweissprogramm": "Kemppi X5P FastMig",
     "zusatzwerkstoff": "G42 5 M21 3Si1",
     "parameter": "I:330 / U:29,8 / Vd:11,3 / Vs:270 / Ta:60",
-    "t85Zeit": "#1: K16,8s; P:17,08s #2: K:14,9s; P:13,8s",
+    "t85Zeit": [
+      { "typK": "16,8s", "pyrometer": "17,08s" },
+      { "typK": "14,9s", "pyrometer": "13,8s" }
+    ],
     "untersuchungen": "Geplant",
     "untersuchungAbgeschlossen": false
   },
@@ -54,7 +63,10 @@
     "schweissprogramm": "Kemppi X5P FastMig",
     "zusatzwerkstoff": "G42 5 M21 3Si1",
     "parameter": "I:330 / U:22,9 / Vd:11,3 / Vs:222 / Ta:60",
-    "t85Zeit": "#1: 25,44s ; #2: 20,42s",
+    "t85Zeit": [
+      { "typK": "25,44s", "pyrometer": "/" },
+      { "typK": "20,42", "pyrometer": "/" }
+    ],
     "untersuchungen": "Geplant",
     "untersuchungAbgeschlossen": true
   },
@@ -69,7 +81,10 @@
     "schweissprogramm": "Kemppi X5P FastMig",
     "zusatzwerkstoff": "G42 5 M21 3Si1",
     "parameter": "I:330 / U:29,8 / Vd:11,3 / Vs:234 / Ta:100",
-    "t85Zeit": "#1: 25,4s ; #2: 21,33s",
+    "t85Zeit": [
+      { "typK": "25,4s", "pyrometer": "/" },
+      { "typK": "21,33s", "pyrometer": "/" }
+    ],
     "untersuchungen": "Geplant",
     "untersuchungAbgeschlossen": true
   },
@@ -84,6 +99,10 @@
     "schweissprogramm": "Kemppi X5P FastMig",
     "zusatzwerkstoff": "G42 5 M21 3Si1",
     "parameter": "I:330 / U:29,8 / Vd:11,3 / Vs:234 / Ta:100",
+    "t85Zeit": [
+      { "typK": "/", "pyrometer": "17,34s" },
+      { "typK": "20,14s", "pyrometer": "16,48s" }
+    ],
     "t85Zeit": "#1: 17,34s ; #2: K:20,14s; P:16,48s",
     "untersuchungen": "Geplant",
     "untersuchungAbgeschlossen": true
