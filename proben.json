@@ -33,7 +33,7 @@
       { "typK": "/", "pyrometer": "24s" }
     ],
     "untersuchungen": "Geplant",
-    "untersuchungAbgeschlossen": true
+    "untersuchungAbgeschlossen": false
   },
   {
     "id": 3,
@@ -68,7 +68,7 @@
       { "typK": "20,42", "pyrometer": "/" }
     ],
     "untersuchungen": "Geplant",
-    "untersuchungAbgeschlossen": true
+    "untersuchungAbgeschlossen": false
   },
   {
     "id": 5,
@@ -86,7 +86,7 @@
       { "typK": "21,33s", "pyrometer": "/" }
     ],
     "untersuchungen": "Geplant",
-    "untersuchungAbgeschlossen": true
+    "untersuchungAbgeschlossen": false
   },
   {
     "id": 6,
@@ -104,6 +104,98 @@
       { "typK": "20,14s", "pyrometer": "16,48s" }
     ],
     "untersuchungen": "Geplant",
-    "untersuchungAbgeschlossen": true
+    "untersuchungAbgeschlossen": false
+  },
+  {
+    "id": 7,
+    "versuchsname": "20mm_S4_V1_#1",
+    "datum": "tba",
+    "entsorgungsdatum": "2030-12",
+    "grundwerkstoff": "S460MLO",
+    "materialstärke": "20mm",
+    "naht": "30° V-Naht, 1 mm Fase",
+    "schweissprogramm": "Kemppi X5P FastMig",
+    "zusatzwerkstoff": "G42 5 M21 3Si1",
+    "parameter": "I:330 / U:29,8 / Vd:11,3 / Vs:396 / Ta:140",
+    "t85Zeit": [
+      { "typK": "11,7s", "pyrometer": "10,22s" },
+      { "typK": "12,04s", "pyrometer": "10,98s" },
+      { "typK": "11,94s", "pyrometer": "10,99s" }
+    ],
+    "untersuchungen": "Geplant",
+    "untersuchungAbgeschlossen": false
+  },
+  {
+    "id": 8,
+    "versuchsname": "20mm_S4_V2_#1",
+    "datum": "tba",
+    "entsorgungsdatum": "2030-12",
+    "grundwerkstoff": "S460MLO",
+    "materialstärke": "20mm",
+    "naht": "30° V-Naht, 1 mm Fase",
+    "schweissprogramm": "Kemppi X5P FastMig",
+    "zusatzwerkstoff": "G42 5 M21 3Si1",
+    "parameter": "I:331; 330 / U:29,8 / Vd:11,3 / Vs:168 / Ta:140",
+    "t85Zeit": [
+      { "typK": "41,37s", "pyrometer": "38,19s" },
+      { "typK": "/", "pyrometer": "45,6s" }
+    ],
+    "untersuchungen": "Geplant",
+    "untersuchungAbgeschlossen": false
+  },
+  {
+    "id": 9,
+    "versuchsname": "20mm_S4_V3_#1",
+    "datum": "tba",
+    "entsorgungsdatum": "2030-12",
+    "grundwerkstoff": "S460MLO_Ancrofer_Spannungsarmgeglüht",
+    "materialstärke": "20mm",
+    "naht": "30° V-Naht, 1 mm Fase",
+    "schweissprogramm": "Kemppi X5P FastMig",
+    "zusatzwerkstoff": "G42 5 M21 3Si1",
+    "parameter": "I: #1: 331; #2,#3: 330 / U:29,8 / Vd:11,3 / Vs:396 / Ta:60",
+    "t85Zeit": [
+      { "typK": "8,21s", "pyrometer": "7,65s" },
+      { "typK": "/", "pyrometer": "7,63" },
+      { "typK": "/", "pyrometer": "8,43s" }
+    ],
+    "untersuchungen": "Geplant",
+    "untersuchungAbgeschlossen": false
+  },
+  {
+    "id": 10,
+    "versuchsname": "20mm_S4_V4_#1",
+    "datum": "01.11.2024 11:00",
+    "entsorgungsdatum": "2030-12",
+    "grundwerkstoff": "S460MLO_Ancrofer_Spannungsarmgeglüht",
+    "materialstärke": "20mm",
+    "naht": "30° V-Naht, 1 mm Fase",
+    "schweissprogramm": "Kemppi X5P FastMig",
+    "zusatzwerkstoff": "G42 5 M21 3Si1",
+    "parameter": "I: #1:331; #2:330 / U:29,8 / Vd:11,3 / Vs:168 / Ta:60",
+    "t85Zeit": [
+      { "typK": "30,89s", "pyrometer": "27,87s" },
+      { "typK": "/", "pyrometer": "30,8s" }
+    ],
+    "untersuchungen": "Geplant",
+    "untersuchungAbgeschlossen": false
+  },
+  {
+    "id": 11,
+    "versuchsname": "20mm_S4_V5_#1",
+    "datum": "tba",
+    "entsorgungsdatum": "2030-12",
+    "grundwerkstoff": "S460MLO_Ancrofer_Spannungsarmgeglüht",
+    "materialstärke": "20mm",
+    "naht": "30° V-Naht, 1 mm Fase",
+    "schweissprogramm": "Kemppi X5P FastMig",
+    "zusatzwerkstoff": "G42 5 M21 3Si1",
+    "parameter": "I: #1:331; #2:330 / U:29,8 / Vd:11,3 / Vs:234 / Ta:100",
+    "t85Zeit": [
+      { "typK": "20,42s", "pyrometer": "22,21s" },
+      { "typK": "20,44s", "pyrometer": "20,32s" }
+    ],
+    "untersuchungen": "Geplant",
+    "untersuchungAbgeschlossen": false
   }
 ]
