@@ -103,7 +103,6 @@
       { "typK": "/", "pyrometer": "17,34s" },
       { "typK": "20,14s", "pyrometer": "16,48s" }
     ],
-    "t85Zeit": "#1: 17,34s ; #2: K:20,14s; P:16,48s",
     "untersuchungen": "Geplant",
     "untersuchungAbgeschlossen": true
   }
