@@ -35,7 +35,8 @@
     
         // Tabelle für Mittlere t8/5-Zeit generieren
         const tabelleT85 = erstelleTabelleT85(probe.t85Zeit);
-    
+        const tabelleSchweissparameter = erstelleTabelleSchweissparameter(probe.schweissparameter);
+        
         document.getElementById("details").innerHTML = `
           <h1>Details zu Probe ${probe.id}</h1>
           <div class="detail-item"><label>Versuchsname:</label> ${probe.versuchsname}</div>
@@ -85,21 +86,6 @@
       `;
     }
 
-      // Tabelle für Schweißparameter generieren
-      const tabelleSchweissparameter = erstelleTabelleSchweissparameter(probe.schweissparameter);
-  
-      document.getElementById("details").innerHTML = `
-        <h1>Details zu Probe ${probe.id}</h1>
-        <div class="detail-item"><label>Versuchsname:</label> ${probe.versuchsname}</div>
-        <div class="detail-item"><label>Mittlere t8/5-Zeit:</label> ${tabelleT85}</div>
-        <div class="detail-item"><label>Schweißparameter:</label> ${tabelleSchweissparameter}</div>
-        <a href="index.html">Zurück zur Übersicht</a>
-      `;
-    } catch (error) {
-      console.error("Fehler beim Laden der Details:", error);
-      document.body.innerHTML = "<h1>Fehler beim Laden der Details</h1>";
-    }
-  }
     // Funktion zur Erstellung der Tabelle für Schweißparameter
     function erstelleTabelleSchweissparameter(schweissparameter) {
       if (!Array.isArray(schweissparameter) || schweissparameter.length === 0) {
