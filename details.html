@@ -44,7 +44,7 @@
           <div class="detail-item"><label>Naht:</label> ${probe.naht}</div>
           <div class="detail-item"><label>Schweißprogramm:</label> ${probe.schweissprogramm}</div>
           <div class="detail-item"><label>Schweißzusatzwerkstoff:</label> ${probe.zusatzwerkstoff}</div>
-          <div class="detail-item"><label>Schweißparameter:</label> ${probe.parameter}</div>
+          <div class="detail-item"><label>Schweißparameter:</label> ${tabelleSchweissparameter}</div>
           <div class="detail-item"><label>Mittlere t8/5-Zeit:</label> ${tabelleT85}</div>
           <div class="detail-item"><label>Untersuchungen:</label> ${probe.untersuchungen}</div>
           <a href="index.html">Zurück zur Übersicht</a>
@@ -76,6 +76,42 @@
               <th>Schweißlage</th>
               <th>Typ-K</th>
               <th>Pyrometer</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${rows}
+          </tbody>
+        </table>
+      `;
+    }
+
+    // Funktion zur Erstellung der Tabelle für Schweißparameter
+    function erstelleTabelleSchweissparameter(schweissparameter) {
+      if (!Array.isArray(schweissparameter) || schweissparameter.length === 0) {
+        return "<p>Keine Schweißparameter verfügbar</p>";
+      }
+    
+      const rows = schweissparameter.map((param) => `
+        <tr>
+          <td>${param.lage}</td>
+          <td>${param.strom}</td>
+          <td>${param.spannung}</td>
+          <td>${param.Vd}</td>
+          <td>${param.Vs}</td>
+          <td>${param.Ta}</td>
+        </tr>
+      `).join("");
+    
+      return `
+        <table border="1" style="border-collapse: collapse; width: auto; margin-top: 10px; text-align: center;">
+          <thead>
+            <tr>
+              <th>Lage</th>
+              <th>I in A</th>
+              <th>U in V</th>
+              <th>Vd in m/min</th>
+              <th>Vs in mm/min</th>
+              <th>Ta in °C</th>
             </tr>
           </thead>
           <tbody>
