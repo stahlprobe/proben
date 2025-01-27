@@ -7,8 +7,11 @@
     "materialstärke": "20mm",
     "naht": "Stumpfnaht, 30°-V-Naht, 1mm Spalt",
     "schweissprogramm": "Kemppi X5P FastMig, 1Mig Penetration+",
-    "zusatzwerkstoff": "Böhler-Wekding G42 5 M21 3Si1",
-    "parameter": "I:330 / U:29,8 / Vd:11,3 / Vs:270 / Ta:140",
+    "zusatzwerkstoff": "G42 5 M21 3Si1",
+    "schweissparameter": [
+      {"lage": "#1","strom": "330","spannung": "29,8","vd": "11,3","vs": "270","ta": "140"},
+      {"lage": "#2","strom": "330","spannung": "29,8","vd": "11,3","vs": "270","ta": "140"}
+    ],
     "t85Zeit": [
       { "typK": "/", "pyrometer": "22,6s" },
       { "typK": "21s", "pyrometer": "20,2s" }
@@ -27,7 +30,10 @@
     "naht": "30° V-Naht, 1 mm Fase",
     "schweissprogramm": "Kemppi X5P FastMig",
     "zusatzwerkstoff": "G42 5 M21 3Si1",
-    "parameter": "I:330 / U:29,8 / Vd:11,3 / Vs:222 / Ta:140",
+    "schweissparameter": [
+    {"lage": "#1","strom": "330","spannung": "29,8","vd": "11,3","vs": "222","ta": "140"},
+    {"lage": "#2","strom": "330","spannung": "29,8","vd": "11,3","vs": "222","ta": "140"}
+    ],
     "t85Zeit": [
       { "typK": "30,5s", "pyrometer": "/" },
       { "typK": "/", "pyrometer": "24s" }
@@ -44,7 +50,10 @@
     "naht": "30° V-Naht, 1 mm Fase",
     "schweissprogramm": "Kemppi X5P FastMig",
     "zusatzwerkstoff": "G42 5 M21 3Si1",
-    "parameter": "I:330 / U:29,8 / Vd:11,3 / Vs:270 / Ta:60",
+    "schweissparameter": [
+    {"lage": "#1","strom": "330","spannung": "29,8","vd": "11,3","vs": "270","ta": "60"},
+    {"lage": "#2","strom": "330","spannung": "29,8","vd": "11,3","vs": "270","ta": "60"}
+    ],
     "t85Zeit": [
       { "typK": "16,8s", "pyrometer": "17,08s" },
       { "typK": "14,9s", "pyrometer": "13,8s" }
@@ -62,7 +71,10 @@
     "naht": "30° V-Naht, 1 mm Fase",
     "schweissprogramm": "Kemppi X5P FastMig",
     "zusatzwerkstoff": "G42 5 M21 3Si1",
-    "parameter": "I:330 / U:22,9 / Vd:11,3 / Vs:222 / Ta:60",
+    "schweissparameter": [
+    {"lage": "#1","strom": "330","spannung": "22,9","vd": "11,3","vs": "222","ta": "60"},
+    {"lage": "#2","strom": "330","spannung": "22,9","vd": "11,3","vs": "222","ta": "60"}
+    ],
     "t85Zeit": [
       { "typK": "25,44s", "pyrometer": "/" },
       { "typK": "20,42", "pyrometer": "/" }
@@ -80,7 +92,10 @@
     "naht": "30° V-Naht, 1 mm Fase",
     "schweissprogramm": "Kemppi X5P FastMig",
     "zusatzwerkstoff": "G42 5 M21 3Si1",
-    "parameter": "I:330 / U:29,8 / Vd:11,3 / Vs:234 / Ta:100",
+    "schweissparameter": [
+    {"lage": "#1","strom": "330","spannung": "29,8","vd": "11,3","vs": "234","ta": "100"},
+    {"lage": "#2","strom": "330","spannung": "29,8","vd": "11,3","vs": "234","ta": "100"}
+    ],
     "t85Zeit": [
       { "typK": "25,4s", "pyrometer": "/" },
       { "typK": "21,33s", "pyrometer": "/" }
@@ -98,7 +113,10 @@
     "naht": "30° V-Naht, 1 mm Fase",
     "schweissprogramm": "Kemppi X5P FastMig",
     "zusatzwerkstoff": "G42 5 M21 3Si1",
-    "parameter": "I:330 / U:29,8 / Vd:11,3 / Vs:234 / Ta:100",
+    "schweissparameter": [
+    {"lage": "#1","strom": "330","spannung": "29,8","vd": "11,3","vs": "234","ta": "100"},
+    {"lage": "#2","strom": "330","spannung": "29,8","vd": "11,3","vs": "234","ta": "100"}
+    ],
     "t85Zeit": [
       { "typK": "/", "pyrometer": "17,34s" },
       { "typK": "20,14s", "pyrometer": "16,48s" }
@@ -116,7 +134,11 @@
     "naht": "30° V-Naht, 1 mm Fase",
     "schweissprogramm": "Kemppi X5P FastMig",
     "zusatzwerkstoff": "G42 5 M21 3Si1",
-    "parameter": "I:330 / U:29,8 / Vd:11,3 / Vs:396 / Ta:140",
+    "schweissparameter": [
+    {"lage": "#1","strom": "330","spannung": "29,8","vd": "11,3","vs": "396","ta": "140"},
+    {"lage": "#2","strom": "330","spannung": "29,8","vd": "11,3","vs": "396","ta": "140"},
+    {"lage": "#3","strom": "330","spannung": "29,8","vd": "11,3","vs": "396","ta": "140"}
+    ],
     "t85Zeit": [
       { "typK": "11,7s", "pyrometer": "10,22s" },
       { "typK": "12,04s", "pyrometer": "10,98s" },
@@ -135,7 +157,10 @@
     "naht": "30° V-Naht, 1 mm Fase",
     "schweissprogramm": "Kemppi X5P FastMig",
     "zusatzwerkstoff": "G42 5 M21 3Si1",
-    "parameter": "I:331; 330 / U:29,8 / Vd:11,3 / Vs:168 / Ta:140",
+    "schweissparameter": [
+    {"lage": "#1","strom": "331","spannung": "29,8","vd": "11,3","vs": "168","ta": "140"},
+    {"lage": "#2","strom": "330","spannung": "29,8","vd": "11,3","vs": "168","ta": "140"}
+    ],
     "t85Zeit": [
       { "typK": "41,37s", "pyrometer": "38,19s" },
       { "typK": "/", "pyrometer": "45,6s" }
@@ -153,7 +178,11 @@
     "naht": "30° V-Naht, 1 mm Fase",
     "schweissprogramm": "Kemppi X5P FastMig",
     "zusatzwerkstoff": "G42 5 M21 3Si1",
-    "parameter": "I: #1: 331; #2,#3: 330 / U:29,8 / Vd:11,3 / Vs:396 / Ta:60",
+    "schweissparameter": [
+    {"lage": "#1","strom": "331","spannung": "29,8","vd": "11,3","vs": "396","ta": "60"},
+    {"lage": "#2","strom": "330","spannung": "29,8","vd": "11,3","vs": "396","ta": "60"},
+    {"lage": "#3","strom": "330","spannung": "29,8","vd": "11,3","vs": "396","ta": "60"}
+    ],
     "t85Zeit": [
       { "typK": "8,21s", "pyrometer": "7,65s" },
       { "typK": "/", "pyrometer": "7,63" },
@@ -172,7 +201,10 @@
     "naht": "30° V-Naht, 1 mm Fase",
     "schweissprogramm": "Kemppi X5P FastMig",
     "zusatzwerkstoff": "G42 5 M21 3Si1",
-    "parameter": "I: #1:331; #2:330 / U:29,8 / Vd:11,3 / Vs:168 / Ta:60",
+    "schweissparameter": [
+    {"lage": "#1","strom": "331","spannung": "29,8","vd": "11,3","vs": "168","ta": "60"},
+    {"lage": "#2","strom": "330","spannung": "29,8","vd": "11,3","vs": "168","ta": "60"}
+    ],
     "t85Zeit": [
       { "typK": "30,89s", "pyrometer": "27,87s" },
       { "typK": "/", "pyrometer": "30,8s" }
@@ -190,7 +222,10 @@
     "naht": "30° V-Naht, 1 mm Fase",
     "schweissprogramm": "Kemppi X5P FastMig",
     "zusatzwerkstoff": "G42 5 M21 3Si1",
-    "parameter": "I: #1:331; #2:330 / U:29,8 / Vd:11,3 / Vs:234 / Ta:100",
+    "schweissparameter": [
+    {"lage": "#1","strom": "331","spannung": "29,8","vd": "11,3","vs": "234","ta": "100"},
+    {"lage": "#2","strom": "330","spannung": "29,8","vd": "11,3","vs": "234","ta": "100"}
+    ],
     "t85Zeit": [
       { "typK": "20,42s", "pyrometer": "22,21s" },
       { "typK": "20,44s", "pyrometer": "20,32s" }
