@@ -15,27 +15,27 @@
     .error { color: red; }
   </style>
   <script>
-
-
-    // Funktion, um die Details zu laden und die Checkbox zu initialisieren
     async function ladeDetails() {
       const params = new URLSearchParams(window.location.search);
       const id = parseInt(params.get("id"));
-
+    
       try {
         const response = await fetch("proben.json");
         if (!response.ok) {
           throw new Error(`Fehler beim Laden der Proben: ${response.statusText}`);
         }
-
+    
         const proben = await response.json();
         const probe = proben.find(p => p.id === id);
-
+    
         if (!probe) {
           document.body.innerHTML = "<h1>Probe nicht gefunden!</h1>";
           return;
         }
-
+    
+        // Tabelle für Mittlere t8/5-Zeit generieren
+        const tabelleT85 = erstelleTabelleT85(probe.t85Zeit);
+    
         document.getElementById("details").innerHTML = `
           <h1>Details zu Probe ${probe.id}</h1>
           <div class="detail-item"><label>Versuchsname:</label> ${probe.versuchsname}</div>
@@ -45,9 +45,8 @@
           <div class="detail-item"><label>Schweißprogramm:</label> ${probe.schweissprogramm}</div>
           <div class="detail-item"><label>Schweißzusatzwerkstoff:</label> ${probe.zusatzwerkstoff}</div>
           <div class="detail-item"><label>Schweißparameter:</label> ${probe.parameter}</div>
-          <div class="detail-item"><label>Mittlere t8/5-Zeit:</label> ${probe.t85Zeit}</div>
+          <div class="detail-item"><label>Mittlere t8/5-Zeit:</label> ${tabelleT85}</div>
           <div class="detail-item"><label>Untersuchungen:</label> ${probe.untersuchungen}</div>
-          <div class="detail-item">
           <a href="index.html">Zurück zur Übersicht</a>
         `;
       } catch (error) {
@@ -55,10 +54,36 @@
         document.body.innerHTML = "<h1>Fehler beim Laden der Details</h1>";
       }
     }
-
-    // Funktion zum Speichern des geänderten Untersuchungsstatus
-
-    window.onload = ladeDetails;
+    
+    // Funktion zur Erstellung der Tabelle für Mittlere t8/5-Zeit
+    function erstelleTabelleT85(t85Daten) {
+      if (!Array.isArray(t85Daten) || t85Daten.length === 0) {
+        return "<p>Keine t8/5-Daten verfügbar</p>";
+      }
+    
+      const rows = t85Daten.map((zeit, index) => `
+        <tr>
+          <td>Schweißlage #${index + 1}</td>
+          <td>${zeit.typK}</td>
+          <td>${zeit.pyrometer}</td>
+        </tr>
+      `).join("");
+    
+      return `
+        <table border="1" style="border-collapse: collapse; width: 100%; margin-top: 10px;">
+          <thead>
+            <tr>
+              <th>Schweißlage</th>
+              <th>Typ-K</th>
+              <th>Pyrometer</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${rows}
+          </tbody>
+        </table>
+      `;
+    }
   </script>
 </head>
 <body>
