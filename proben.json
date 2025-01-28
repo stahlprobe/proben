@@ -147,7 +147,7 @@
     "untersuchungen": "Geplant",
     "untersuchungAbgeschlossen": false
   },
-    {
+  {
     "id": 8,
     "versuchsname": "20mm_S3_V5-ÜLB_#3",
     "datum": "07.11.2024 16:00",
@@ -164,10 +164,10 @@
     {"lage": "#4","strom": "269","spannung": "27,7","vd": "8,5","vs": "180","ta": "100"}
     ],
     "t85Zeit": [
-      { "typK": "21,81s", "pyrometer": "19,727s" },
-      { "typK": "18,81s", "pyrometer": "15,968s" },
-      { "typK": "18,35s", "pyrometer": "16,357s" },
-      { "typK": "16,00s", "pyrometer": "15,216s" }
+      {"typK": "21,81s", "pyrometer": "19,727s" },
+      {"typK": "18,81s", "pyrometer": "15,968s" },
+      {"typK": "18,35s", "pyrometer": "16,357s" },
+      {"typK": "16,00s", "pyrometer": "15,216s" }
     ],
     "untersuchungen": "Geplant",
     "untersuchungAbgeschlossen": false
