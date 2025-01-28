@@ -126,31 +126,6 @@
   },
   {
     "id": 7,
-    "versuchsname": "20mm_S3_V5-ÜLB_#1",
-    "datum": "tba",
-    "entsorgungsdatum": "2030-12",
-    "grundwerkstoff": "S355G10+M",
-    "materialstärke": "20mm",
-    "naht": "45° V-Naht, 1,5 mm Fase",
-    "schweissprogramm": "Kemppi X5P FastMig",
-    "zusatzwerkstoff": "G42 5 M21 3Si1",
-    "schweissparameter": [
-    {"lage": "#1","strom": "269","spannung": "27,7","vd": "8,7","vs": "500","ta": "100"},
-    {"lage": "#2","strom": "269","spannung": "27,7","vd": "8,7","vs": "180","ta": "100"},
-    {"lage": "#3","strom": "269","spannung": "27,7","vd": "8,7","vs": "180","ta": "100"},
-    {"lage": "#4","strom": "269","spannung": "27,7","vd": "8,7","vs": "180","ta": "100"}
-    ],
-    "t85Zeit": [
-      { "typK": "/", "pyrometer": "/" },
-      { "typK": "22,15s", "pyrometer": "/" },
-      { "typK": "18s", "pyrometer": "18,5s" },
-      { "typK": "16,8s", "pyrometer": "15,7s" }
-    ],
-    "untersuchungen": "Geplant",
-    "untersuchungAbgeschlossen": false
-  },
-  {
-    "id": 8,
     "versuchsname": "20mm_S3_V5-ÜLB_#2",
     "datum": "07.11.2024 14:00",
     "entsorgungsdatum": "2030-12",
@@ -162,12 +137,37 @@
     "schweissparameter": [
     {"lage": "#1","strom": "269","spannung": "27,7","vd": "8,5","vs": "180","ta": "100"},
     {"lage": "#2","strom": "269","spannung": "27,7","vd": "8,5","vs": "180","ta": "100"},
-    {"lage": "#3","strom": "269","spannung": "27,7","vd": "8,5","vs": "180","ta": "100"},
+    {"lage": "#3","strom": "269","spannung": "27,7","vd": "8,5","vs": "180","ta": "100"}
     ],
     "t85Zeit": [
       { "typK": "23,32s", "pyrometer": "20,912s" },
       { "typK": "15,84s", "pyrometer": "15,28s" },
       { "typK": "16,18s", "pyrometer": "14,304s" }
+    ],
+    "untersuchungen": "Geplant",
+    "untersuchungAbgeschlossen": false
+  },
+    {
+    "id": 8,
+    "versuchsname": "20mm_S3_V5-ÜLB_#3",
+    "datum": "07.11.2024 16:00",
+    "entsorgungsdatum": "2030-12",
+    "grundwerkstoff": "S355G10+M",
+    "materialstärke": "20mm",
+    "naht": "45° V-Naht, 1,5 mm Fase",
+    "schweissprogramm": "Kemppi X5P FastMig",
+    "zusatzwerkstoff": "G42 5 M21 3Si1",
+    "schweissparameter": [
+    {"lage": "#1","strom": "274","spannung": "27,7","vd": "8,5","vs": "180","ta": "100"},
+    {"lage": "#2","strom": "269","spannung": "27,7","vd": "8,5","vs": "180","ta": "100"},
+    {"lage": "#3","strom": "269","spannung": "27,7","vd": "8,5","vs": "180","ta": "100"},
+    {"lage": "#4","strom": "269","spannung": "27,7","vd": "8,5","vs": "180","ta": "100"}
+    ],
+    "t85Zeit": [
+      { "typK": "21,81s", "pyrometer": "19,727s" },
+      { "typK": "18,81s", "pyrometer": "15,968s" },
+      { "typK": "18,35s", "pyrometer": "16,357s" },
+      { "typK": "16,00s", "pyrometer": "15,216s" }
     ],
     "untersuchungen": "Geplant",
     "untersuchungAbgeschlossen": false
