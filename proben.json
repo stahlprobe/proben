@@ -131,7 +131,7 @@
     "entsorgungsdatum": "2030-12",
     "grundwerkstoff": "S355G10+M",
     "materialstärke": "20mm",
-    "naht": "30° V-Naht, 1 mm Fase",
+    "naht": "45° V-Naht, 1,5 mm Fase",
     "schweissprogramm": "Kemppi X5P FastMig",
     "zusatzwerkstoff": "G42 5 M21 3Si1",
     "schweissparameter": [
