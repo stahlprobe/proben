@@ -46,7 +46,7 @@
     "versuchsname": "20mm_S3_V3_#1",
     "datum": "tba",
     "entsorgungsdatum": "2032-06",
-    "grundwerkstoff": "S690QL",
+    "grundwerkstoff": "S355G10+M",
     "naht": "30° V-Naht, 1 mm Fase",
     "schweissprogramm": "Kemppi X5P FastMig",
     "zusatzwerkstoff": "G42 5 M21 3Si1",
