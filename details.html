@@ -32,7 +32,19 @@
           document.body.innerHTML = "<h1>Probe nicht gefunden!</h1>";
           return;
         }
+        const urlParams = new URLSearchParams(window.location.search);
+        const id = parseInt(urlParams.get('id')); // ID als Zahl
     
+        if (!isNaN(id)) { // Prüfen, ob ID vorhanden ist
+            // Nächste ID berechnen
+            const nextId = id + 1;
+    
+            // Button-Element finden
+            const nextButton = document.getElementById("nextProbe");
+    
+            // Neue URL setzen
+            nextButton.href = `details.html?id=${nextId}`;
+        }
         // Tabelle für Mittlere t8/5-Zeit generieren
         const tabelleT85 = erstelleTabelleT85(probe.t85Zeit);
 
@@ -51,6 +63,7 @@
           <div class="detail-item"><label>Mittlere t8/5-Zeit:</label> ${tabelleT85}</div>
           <div class="detail-item"><label>Untersuchungen:</label> ${probe.untersuchungen}</div>
           <a href="index.html">Zurück zur Übersicht</a>
+          <a id="nextProbe" href="#">Nächste Probe</a>
         `;
       } catch (error) {
         console.error("Fehler beim Laden der Details:", error);
