@@ -127,7 +127,7 @@
   {
     "id": 7,
     "versuchsname": "20mm_S3_V5-ÜLB_#2",
-    "datum": "07.11.2024 14:00",
+    "datum": "07.11.2024 15:00",
     "entsorgungsdatum": "2030-12",
     "grundwerkstoff": "S355G10+M",
     "materialstärke": "20mm",
@@ -150,7 +150,7 @@
   {
     "id": 8,
     "versuchsname": "20mm_S3_V5-ÜLB_#3",
-    "datum": "07.11.2024 16:00",
+    "datum": "07.11.2024 17:30",
     "entsorgungsdatum": "2030-12",
     "grundwerkstoff": "S355G10+M",
     "materialstärke": "20mm",
@@ -200,7 +200,7 @@
   {
     "id": 10,
     "versuchsname": "20mm_S4_V1_#1",
-    "datum": "tba",
+    "datum": "01.11.2024 14:30",
     "entsorgungsdatum": "2030-12",
     "grundwerkstoff": "S460MLO",
     "materialstärke": "20mm",
@@ -223,7 +223,7 @@
   {
     "id": 11,
     "versuchsname": "20mm_S4_V2_#1",
-    "datum": "tba",
+    "datum": "31.10.2024 16:45",
     "entsorgungsdatum": "2030-12",
     "grundwerkstoff": "S460MLO",
     "materialstärke": "20mm",
@@ -244,7 +244,7 @@
   {
     "id": 12,
     "versuchsname": "20mm_S4_V3_#1",
-    "datum": "tba",
+    "datum": "31.10.2024 14:30",
     "entsorgungsdatum": "2030-12",
     "grundwerkstoff": "S460MLO",
     "materialstärke": "20mm",
@@ -267,7 +267,7 @@
   {
     "id": 13,
     "versuchsname": "20mm_S4_V4_#1",
-    "datum": "01.11.2024 11:00",
+    "datum": "01.11.2024 11:00",5
     "entsorgungsdatum": "2030-12",
     "grundwerkstoff": "S460MLO",
     "materialstärke": "20mm",
@@ -288,7 +288,7 @@
   {
     "id": 14,
     "versuchsname": "20mm_S4_V5_#1",
-    "datum": "tba",
+    "datum": "31.10.2024 12:30",
     "entsorgungsdatum": "2030-12",
     "grundwerkstoff": "S460MLO",
     "materialstärke": "20mm",
